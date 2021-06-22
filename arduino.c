@@ -5,10 +5,10 @@ Ultrasonic ultrasonic(TRIGGER_PIN, ECHO_PIN);
 
 void setup(){
     Serial.begin(9600);
-        for (int i=2; i<5; i++) { 
-            pinMode(i, OUTPUT); 
-            Serial.print(i);
-        }
+    for (int i=2; i<5; i++) { 
+        pinMode(i, OUTPUT); 
+        Serial.print(i);
+    }
 }
 
 void loop(){
@@ -21,28 +21,28 @@ void loop(){
     Serial.println(cmMsec); 
     delay(150); 
 
-        if (cmMsec <= 10) { 
-            digitalWrite(4, HIGH); 
-            tone(5, 1000, 300);
-            delay(100);
-        }
+    if (cmMsec <= 10) { 
+        digitalWrite(4, HIGH); 
+        tone(5, 1000, 300);
+        delay(100);
+    }
 
-        else if (cmMsec <= 25) { 
-            digitalWrite(3, HIGH); 
-            tone(5, 1000, 300);
-            delay(250);
-        }
+    else if (cmMsec <= 25) { 
+        digitalWrite(3, HIGH); 
+        tone(5, 1000, 300);
+        delay(250);
+    }
 
-        else if (cmMsec <= 40) { 
-            digitalWrite(2, HIGH); 
-            tone(5, 1000, 300);
-            delay(400);
-        }
+    else if (cmMsec <= 40) { 
+        digitalWrite(2, HIGH); 
+        tone(5, 1000, 300);
+        delay(400);
+    }
 
-        else { 
-            for (int i=2; i<5; i++) {
-                digitalWrite(i, LOW); 
-            }
-            noTone(5);
+    else { 
+        for (int i=2; i<5; i++) {
+            digitalWrite(i, LOW); 
         }
+        noTone(5);
+    }
 }
